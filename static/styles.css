@@ -4,12 +4,31 @@ body {
     text-align: center;
 }
 
-img {
-    height: 80%;
-    width: 80%;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 1rem;
 }
 
-.movies {
-    display: flex;
-    justify-content: center;
+.movie {
+  width: 140px;
+  text-align: center;
+}
+
+.movie_poster {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.movie_title {
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: small;
+}
+
+.movie_poster:hover {
+    transform: scale(1.05);
 }

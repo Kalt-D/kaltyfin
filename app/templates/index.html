@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="movies">
+        {% for media in medias %}
+        <div>
+            <h2>{{ media.title }}</h2>
+            <img src="{{ media.poster_url }}" alt="{{ media.title }}">
+            <p>{{ media.year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

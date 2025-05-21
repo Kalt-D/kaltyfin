@@ -9,7 +9,7 @@ def get_movie_data(title: str):
     params = {
         "api_key": TMDB_API_KEY,
         "query": title,
-        "language": "fr-FR"
+        "language": "en-GB"
     }
 
     response = requests.get(url, params=params)

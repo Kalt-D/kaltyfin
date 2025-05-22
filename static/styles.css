@@ -2,6 +2,8 @@ body {
     background-color: black;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .grid {
@@ -31,4 +33,117 @@ body {
 
 .movie_poster:hover {
     transform: scale(1.05);
+}
+
+.preview-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.poster-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-poster {
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.title-year {
+  text-align: center;
+}
+
+.overview {
+  max-width: 500px;
+  text-align: left;
+}
+
+.cast-section {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.actors {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.director, .actor-card {
+  text-align: center;
+}
+
+.actor-card img,
+.director img {
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.poster-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.movie-poster {
+  width: 250px;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.poster-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.poster-wrapper:hover .play-button {
+  opacity: 1;
+}
+
+.video-container {
+  margin: 2rem auto;
+  background: black;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  /* si tu veux centrer verticalement aussi */
+  width: fit-content;   /* conteneur à la taille du contenu */
+}
+
+#video-player {
+  width: 1000px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

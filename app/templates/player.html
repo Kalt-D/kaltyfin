@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="video-container">
+    <h2>{{ movie.title }} ({{ movie.year }})</h2>
+
+    {% set ext = title.split('.')[-1].lower() %}
+    {% set mime_types = {
+        'mp4': 'video/mp4',
+        'webm': 'video/webm',
+        'avi': 'video/x-msvideo'
+    } %}
+    {% set mime = mime_types.get(ext, 'video/mp4') %}
+
+    <video id="video-player" controls>
+        <source src="/media/Films/{{ title | urlencode }}" type="{{ mime }}">
+        Votre navigateur ne supporte pas ce format.
+    </video>
+</div>
+{% endblock %}

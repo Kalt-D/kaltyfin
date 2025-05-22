@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="preview-page">
+  <div class="top-section">
+    <div class="poster-info">
+        <div class="poster-wrapper">
+            <a href="/view/{{ movie.id }}?title={{ filename | urlencode }}">
+              <img src="{{ movie.poster_url }}" alt="{{ movie.title }}" class="preview-poster">
+              <div class="play-button">▶</div>
+            </a>
+          </div>
+    <div class="title-year">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.year }}</p>
+      </div>
+    </div>
+
+    <div class="overview">
+      <h3>Résumé</h3>
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+
+  <div class="cast-section">
+    <div class="director">
+      <img src="{{ movie.director.picture_url }}" alt="{{ movie.director.name }}">
+      <p>{{ movie.director.name }}</p>
+      <h3>Réalisateur</h3>
+    </div>
+
+    <div class="actors">
+      {% for actor in movie.actors %}
+      <div class="actor-card">
+        <img src="{{ actor.picture_url }}" alt="{{ actor.name }}">
+        <p>{{ actor.name }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

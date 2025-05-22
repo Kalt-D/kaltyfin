@@ -8,14 +8,10 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <header>
-        <h1>Welcome to Kaltyfin</h1>
-    </header>
-
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    {% block scripts %}<script src="{{ url_for('static', path='main.js') }}"></script>{% endblock %}
+    {% block scripts %}<script src="{{ url_for('static', path='player.js') }}"></script>{% endblock %}
 </body>
 </html>

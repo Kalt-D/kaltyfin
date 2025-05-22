@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h1>Welcome to Kaltyfin</h1>
     <div class="grid">
   {% for media in medias %}
     <div class="movie">
-      <img class="movie_poster" src="{{ media.poster_url }}" alt="{{ media.title }}">
-      <h2 class="movie_title">{{ media.title }}</h2>
+        <a href="/preview/{{ media.id }}?filename={{ media.filename | urlencode }}">
+            <img class="movie_poster" src="{{ media.poster_url }}" alt="{{ media.title }}">
+        </a>
+        <h2 class="movie_title">{{ media.title }}</h2>
     </div>
   {% endfor %}
 </div>
